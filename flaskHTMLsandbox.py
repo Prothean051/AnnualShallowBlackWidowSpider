@@ -1,9 +1,11 @@
 from flask import Flask, url_for, render_template, request, session
 app = Flask(__name__)
 app.secret_key='2010749'
-session['sessionTest']=request.form['No']
+##session['sessionTest']=request.form['No']
 
 @app.route('/')
+def home():
+    return render_template('home.html')
 @app.route('/htmlExperimenting')
 def htmlExperiment():
     return render_template('htmlExperimenting.html')
